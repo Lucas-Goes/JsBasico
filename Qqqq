@@ -26,3 +26,28 @@ button.pack()
 
 # Exibe a janela principal
 parent.mainloop() 
+
+
+from tkinter import *
+
+def show_child():
+    child_window = Toplevel(root)
+    child_window.geometry("200x100")
+
+    # create a StringVar and set its value to the value of the textbox
+    s = StringVar()
+    s.set(textbox.get())
+
+    # create a textbox widget and set its textvariable to the StringVar
+    child_textbox = Entry(child_window, textvariable=s)
+    child_textbox.pack()
+
+root = Tk()
+
+# create a textbox and a button
+textbox = Entry(root)
+textbox.pack()
+button = Button(root, text="Show Child", command=show_child)
+button.pack()
+
+root.mainloop()
