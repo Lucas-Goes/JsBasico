@@ -16,13 +16,13 @@ def open_child():
     child = tk.Toplevel(parent)
     child.title("Janela filho")
 
-    # Cria um rótulo que exibe o valor compartilhado
-    label = tk.Label(child, textvariable=value)
-    label.pack()
+    # Cria um widget de entrada de texto com o valor compartilhado
+    entry = tk.Entry(child, textvariable=value)
+    entry.pack()
 
 # Cria um botão para abrir a janela filho
 button = tk.Button(parent, text="Abrir janela filho", command=open_child)
 button.pack()
 
 # Exibe a janela principal
-parent.mainloop()
+parent.mainloop() 
